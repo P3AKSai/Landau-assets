@@ -215,11 +215,18 @@ font-family:var(--sans);color:var(--text);background:var(--cream);font-size:17px
 .lc .lc-logo-tile{padding:20px 26px}
 .lc .lc-logo-tile b{font-family:var(--serif);font-size:1.3rem;color:var(--ink);font-weight:600;line-height:1.2}
 .lc .lc-logo-tile span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.lc .lc-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.lc .lc-video{aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:var(--ink-2);position:relative}
-.lc .lc-video iframe,.lc .lc-video video{position:absolute;inset:0;width:100%;height:100%;border:0}
-.lc .lc-video:empty{display:grid;place-items:center;border:2px dashed rgba(255,255,255,.18)}
-.lc .lc-video:empty::before{content:"Paste a video embed here";color:rgba(255,255,255,.45);font-size:.9rem}
+.lc .lc-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.lc .lc-vcard{margin:0}
+.lc .lc-yt{position:relative;display:block;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000;cursor:pointer;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.lc .lc-yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s,opacity .3s;opacity:.85}
+.lc .lc-yt:hover img{transform:scale(1.04);opacity:1}
+.lc .lc-yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lc .lc-play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:var(--terra);display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(0,0,0,.6);transition:transform .25s,background .25s}
+.lc .lc-play::before{content:"";margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #fff}
+.lc .lc-yt:hover .lc-play{transform:scale(1.1);background:var(--terra-2)}
+.lc .lc-vcard figcaption{margin-top:14px}
+.lc .lc-vcard figcaption b{display:block;color:#fff;font-size:1rem}
+.lc .lc-vcard figcaption span{display:block;color:rgba(255,255,255,.6);font-size:.88rem}
 
 /* services detail */
 .lc .lc-sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
@@ -338,6 +345,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  .lc .lc-drawer .lc-btn{margin-top:16px;justify-content:center;border:0;padding:16px}
  .lc .lc-steps{grid-template-columns:repeat(3,1fr)}
  .lc .lc-foot-g{grid-template-columns:1fr 1fr}
+ .lc .lc-videos{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
  .lc{font-size:16px}
@@ -391,14 +399,14 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
 </div></div>
 <nav class="lc-nav" id="lcNav">
  <div class="lc-wrap">
-  <a class="lc-logo" href="/" aria-label="Landau &amp; Company home"><img src="/img/landau-logo.png" alt="Landau &amp; Company Marketing Services" width="102" height="54"></a>
+  <a class="lc-logo" href="/" aria-label="Landau &amp; Company home"><img src="/img/landau-logo.png?v=3" alt="Landau &amp; Company Marketing Services" width="102" height="54"></a>
   <div class="lc-menu"><a href="/">Home</a><a href="/company">Company</a><a href="/services">Services</a><a href="/clients">Clients</a><a href="/testimonials">Testimonials</a><a href="/resources" class="on">Resources</a></div>
   <a class="lc-btn lc-btn-primary" href="/contact">Free Consultation <svg class="lc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   <button class="lc-burger" id="lcBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
  </div>
  <div class="lc-drawer"><div class="lc-wrap"><a href="/">Home</a><a href="/company">Company</a><a href="/services">Services</a><a href="/clients">Clients</a><a href="/testimonials">Testimonials</a><a href="/resources" class="on">Resources</a><a href="/contact">Contact Us</a><a class="lc-btn lc-btn-primary" href="tel:+15207977867"><svg class="lc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg> Call 520-797-7867</a></div></div>
 </nav>
-<section class="lc-phero"><img class="lc-bg" src="/img/bg-resources.jpg" alt="" aria-hidden="true"><div class="lc-wrap">
+<section class="lc-phero"><img class="lc-bg" src="/img/hero-tucson.jpg?v=3" alt="" aria-hidden="true"><div class="lc-wrap">
  <div class="lc-crumb"><a href="/">Home</a> &nbsp;/&nbsp; Resources</div>
  <span class="lc-eyebrow">Resources</span><h1>Helpful links for navigating <em>the ad world.</em></h1><p class="lc-lead">We&rsquo;re happy to share this list of resources for your benefit. Feel free to contact us with any questions.</p>
 </div><svg class="lc-land" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
@@ -418,7 +426,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
 
 <footer class="lc-foot"><div class="lc-wrap">
  <div class="lc-foot-g">
-  <div><a class="lc-logo" href="/"><img src="/img/landau-logo.png" alt="Landau &amp; Company Marketing Services" width="121" height="64" loading="lazy"></a>
+  <div><a class="lc-logo" href="/"><img src="/img/landau-logo.png?v=3" alt="Landau &amp; Company Marketing Services" width="121" height="64" loading="lazy"></a>
    <p class="lc-tag">Advertising done properly. Saving your time and money &mdash; two things nobody likes to waste.</p></div>
   <div><h4>Explore</h4><ul><li><a href="/company">Company</a></li><li><a href="/services">Services</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonials</a></li></ul></div>
   <div><h4>More</h4><ul><li><a href="/resources">Resources</a></li><li><a href="/contact">Contact Us</a></li><li><a href="/contact">Free Consultation</a></li></ul></div>
@@ -434,6 +442,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  var root=document.currentScript&&document.currentScript.parentNode;if(!root||!root.classList.contains('lc'))root=document.querySelector('.lc');if(!root)return;
  var nav=root.querySelector('#lcNav'),b=root.querySelector('#lcBurger');
  if(b)b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+ root.querySelectorAll('.lc-yt').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0';f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;f.title=a.getAttribute('aria-label');a.innerHTML='';a.appendChild(f);},{once:true})});
  root.querySelectorAll('.lc-yr').forEach(function(e){e.textContent=new Date().getFullYear()});
  if('IntersectionObserver' in window){root.classList.add('lc-js');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
