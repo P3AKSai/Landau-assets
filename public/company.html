@@ -215,11 +215,18 @@ font-family:var(--sans);color:var(--text);background:var(--cream);font-size:17px
 .lc .lc-logo-tile{padding:20px 26px}
 .lc .lc-logo-tile b{font-family:var(--serif);font-size:1.3rem;color:var(--ink);font-weight:600;line-height:1.2}
 .lc .lc-logo-tile span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.lc .lc-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.lc .lc-video{aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:var(--ink-2);position:relative}
-.lc .lc-video iframe,.lc .lc-video video{position:absolute;inset:0;width:100%;height:100%;border:0}
-.lc .lc-video:empty{display:grid;place-items:center;border:2px dashed rgba(255,255,255,.18)}
-.lc .lc-video:empty::before{content:"Paste a video embed here";color:rgba(255,255,255,.45);font-size:.9rem}
+.lc .lc-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.lc .lc-vcard{margin:0}
+.lc .lc-yt{position:relative;display:block;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000;cursor:pointer;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.lc .lc-yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s,opacity .3s;opacity:.85}
+.lc .lc-yt:hover img{transform:scale(1.04);opacity:1}
+.lc .lc-yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lc .lc-play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:var(--terra);display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(0,0,0,.6);transition:transform .25s,background .25s}
+.lc .lc-play::before{content:"";margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #fff}
+.lc .lc-yt:hover .lc-play{transform:scale(1.1);background:var(--terra-2)}
+.lc .lc-vcard figcaption{margin-top:14px}
+.lc .lc-vcard figcaption b{display:block;color:#fff;font-size:1rem}
+.lc .lc-vcard figcaption span{display:block;color:rgba(255,255,255,.6);font-size:.88rem}
 
 /* services detail */
 .lc .lc-sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
@@ -338,6 +345,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  .lc .lc-drawer .lc-btn{margin-top:16px;justify-content:center;border:0;padding:16px}
  .lc .lc-steps{grid-template-columns:repeat(3,1fr)}
  .lc .lc-foot-g{grid-template-columns:1fr 1fr}
+ .lc .lc-videos{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
  .lc{font-size:16px}
@@ -398,7 +406,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  </div>
  <div class="lc-drawer"><div class="lc-wrap"><a href="/">Home</a><a href="/company" class="on">Company</a><a href="/services">Services</a><a href="/clients">Clients</a><a href="/testimonials">Testimonials</a><a href="/resources">Resources</a><a href="/contact">Contact Us</a><a class="lc-btn lc-btn-primary" href="tel:+15207977867"><svg class="lc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg> Call 520-797-7867</a></div></div>
 </nav>
-<section class="lc-phero"><img class="lc-bg" src="/img/bg-company.jpg" alt="" aria-hidden="true"><div class="lc-wrap">
+<section class="lc-phero"><img class="lc-bg" src="/img/hero-tucson.jpg" alt="" aria-hidden="true"><div class="lc-wrap">
  <div class="lc-crumb"><a href="/">Home</a> &nbsp;/&nbsp; Company</div>
  <span class="lc-eyebrow">About Landau &amp; Company</span><h1>An advertising &amp; marketing consultancy <em>built on partnership.</em></h1><p class="lc-lead">Getting results through highly targeted advertising plans for Tucson businesses since 2004.</p>
 </div><svg class="lc-land" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
@@ -407,10 +415,13 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
 </svg></section>
 <section class="lc-sec"><div class="lc-wrap lc-split">
  <div class="lc-copy lc-rv"><span class="lc-eyebrow">Our story</span><h2>A very different kind of <em>advertising agency.</em></h2>
-  <p>Landau &amp; Company Marketing Services of Tucson, Arizona, is a full-service advertising agency that takes a &ldquo;partnership&rdquo; approach with every client. Our client-centered process pairs a high level of business consulting with business marketing &mdash; so your advertising supports the way your business actually runs.</p>
-  <p>In 2004, Landau &amp; Company opened with a promise: to serve every client as a partner, employee and consultant, creating customer-focused advertising programs that speak to past, present, and future customers.</p>
+  <p>Landau &amp; Company Marketing Services specializes in a very different type of advertising agency &ldquo;partnership&rdquo; approach with each client. Steve Landau, owner and president, has over 35 years of marketing and retail experience and spent 18 years in broadcast advertising. Steve has learned the best and not so best practices from many local and national advertising agencies and has developed his client-centered approach to benefit each client business to the utmost degree.</p>
+  <p>In 2004, Landau &amp; Company opened with the promise to serve all of their clients as a partner, employee and consultant to create customer focused &ldquo;how do you make my life better&rdquo; advertising programs. For this to work for your business, it is imperative that your ownership, management and staff join with us in understanding exactly what your customers need and thereby creating an on-point message that is strategic and tactical. After all, in almost all cases, it is the ownership that has the expertise in their industry. Landau &amp; Company has the expertise in marketing. Together we learn from each other. Partnering in strategies, tactics and idea creation is the key to success. It limits risks with your valuable advertising dollars.</p>
+  <p>Wouldn&rsquo;t you want to be part of the process, rather than having someone tell you how to spend your precious money? If this makes smart sense to you, then partnering with Landau &amp; Company will be the right move for you and your business. Steve Landau is ready for a complimentary consultation with your business.</p>
+  <div class="lc-btns" style="margin-top:30px"><a class="lc-btn lc-btn-primary" href="/contact">Book your complimentary consultation <svg class="lc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
  </div>
- <div class="lc-bigq lc-rv"><p>Partnering in strategies, tactics and idea creation is the key to success.</p><small>&mdash; The Landau &amp; Company philosophy</small></div>
+ <div class="lc-media lc-rv"><img src="/img/roundtable.jpg" alt="Landau &amp; Company strategy meeting with a client" loading="lazy">
+  <div class="lc-media-q"><p>&ldquo;Partnering in strategies, tactics and idea creation is the key to success.&rdquo;</p><small>The Landau &amp; Company philosophy</small></div></div>
 </div></section>
 
 <section class="lc-sec" style="background:var(--sand)"><div class="lc-wrap">
@@ -456,6 +467,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  var root=document.currentScript&&document.currentScript.parentNode;if(!root||!root.classList.contains('lc'))root=document.querySelector('.lc');if(!root)return;
  var nav=root.querySelector('#lcNav'),b=root.querySelector('#lcBurger');
  if(b)b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+ root.querySelectorAll('.lc-yt').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0';f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;f.title=a.getAttribute('aria-label');a.innerHTML='';a.appendChild(f);},{once:true})});
  root.querySelectorAll('.lc-yr').forEach(function(e){e.textContent=new Date().getFullYear()});
  if('IntersectionObserver' in window){root.classList.add('lc-js');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});

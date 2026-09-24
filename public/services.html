@@ -215,11 +215,18 @@ font-family:var(--sans);color:var(--text);background:var(--cream);font-size:17px
 .lc .lc-logo-tile{padding:20px 26px}
 .lc .lc-logo-tile b{font-family:var(--serif);font-size:1.3rem;color:var(--ink);font-weight:600;line-height:1.2}
 .lc .lc-logo-tile span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.lc .lc-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.lc .lc-video{aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:var(--ink-2);position:relative}
-.lc .lc-video iframe,.lc .lc-video video{position:absolute;inset:0;width:100%;height:100%;border:0}
-.lc .lc-video:empty{display:grid;place-items:center;border:2px dashed rgba(255,255,255,.18)}
-.lc .lc-video:empty::before{content:"Paste a video embed here";color:rgba(255,255,255,.45);font-size:.9rem}
+.lc .lc-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.lc .lc-vcard{margin:0}
+.lc .lc-yt{position:relative;display:block;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000;cursor:pointer;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.lc .lc-yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s,opacity .3s;opacity:.85}
+.lc .lc-yt:hover img{transform:scale(1.04);opacity:1}
+.lc .lc-yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lc .lc-play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:var(--terra);display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(0,0,0,.6);transition:transform .25s,background .25s}
+.lc .lc-play::before{content:"";margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #fff}
+.lc .lc-yt:hover .lc-play{transform:scale(1.1);background:var(--terra-2)}
+.lc .lc-vcard figcaption{margin-top:14px}
+.lc .lc-vcard figcaption b{display:block;color:#fff;font-size:1rem}
+.lc .lc-vcard figcaption span{display:block;color:rgba(255,255,255,.6);font-size:.88rem}
 
 /* services detail */
 .lc .lc-sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
@@ -338,6 +345,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  .lc .lc-drawer .lc-btn{margin-top:16px;justify-content:center;border:0;padding:16px}
  .lc .lc-steps{grid-template-columns:repeat(3,1fr)}
  .lc .lc-foot-g{grid-template-columns:1fr 1fr}
+ .lc .lc-videos{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
  .lc{font-size:16px}
@@ -398,9 +406,9 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  </div>
  <div class="lc-drawer"><div class="lc-wrap"><a href="/">Home</a><a href="/company">Company</a><a href="/services" class="on">Services</a><a href="/clients">Clients</a><a href="/testimonials">Testimonials</a><a href="/resources">Resources</a><a href="/contact">Contact Us</a><a class="lc-btn lc-btn-primary" href="tel:+15207977867"><svg class="lc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg> Call 520-797-7867</a></div></div>
 </nav>
-<section class="lc-phero"><img class="lc-bg" src="/img/bg-services.jpg" alt="" aria-hidden="true"><div class="lc-wrap">
+<section class="lc-phero"><img class="lc-bg" src="/img/hero-tucson.jpg" alt="" aria-hidden="true"><div class="lc-wrap">
  <div class="lc-crumb"><a href="/">Home</a> &nbsp;/&nbsp; Services</div>
- <span class="lc-eyebrow">Services</span><h1>Everything you could possibly need <em>&amp; more.</em></h1><p class="lc-lead">All included in your Landau &amp; Company service contract &mdash; with most fees offset by the reduced advertising costs of our agency status.</p>
+ <span class="lc-eyebrow">Services</span><h1>Services Landau &amp; Company <em>Marketing Services Offer</em></h1><p class="lc-lead">All included in your Landau &amp; Company service contract &mdash; with most fees offset by the reduced advertising costs of our agency status.</p>
 </div><svg class="lc-land" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
 <path d="M0 80 L160 50 L300 72 L470 30 L620 70 L780 38 L940 76 L1100 44 L1260 70 L1440 40 V140 H0Z" fill="#222e3d"/>
 <path d="M0 118 C240 100 480 112 720 106 C960 100 1200 114 1440 104 V140 H0Z" fill="#fbf7f1"/>
@@ -408,7 +416,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
 <section class="lc-sec"><div class="lc-wrap">
  <div class="lc-value lc-rv" style="margin-bottom:72px">
   <div class="lc-vi"><svg class="lc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9c-.5-1.2-1.7-2-3-2-1.7 0-3 1-3 2.4 0 3.3 6 1.9 6 5.2 0 1.4-1.3 2.4-3 2.4-1.4 0-2.6-.8-3.1-2M12 5.5v13"/></svg></div>
-  <div><h3>It&rsquo;s like having a valuable employee with no salary.</h3><p>The majority of our service fees are offset by the reduced advertising costs you&rsquo;ll experience from our advertising agency status.</p></div>
+  <div><h3>Everything you could possibly need and more.</h3><p>The majority of our services fees are offset by the reduced advertising costs you will experience from our advertising agency status. It&rsquo;s like having a valuable employee with little to no salary! Call us for more details.</p><p style="margin-top:10px;font-weight:600;color:#fff">Daily, weekly, anytime consultation. We&rsquo;re here for you on your schedule (weekends and nights, too).</p></div>
   <a class="lc-btn" href="tel:+15207977867"><svg class="lc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg> 520-797-7867</a>
  </div>
  <div class="lc-head lc-rv"><span class="lc-eyebrow">What&rsquo;s included</span><h2>One contract. <em>Every piece of the plan.</em></h2></div>
@@ -470,6 +478,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  var root=document.currentScript&&document.currentScript.parentNode;if(!root||!root.classList.contains('lc'))root=document.querySelector('.lc');if(!root)return;
  var nav=root.querySelector('#lcNav'),b=root.querySelector('#lcBurger');
  if(b)b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+ root.querySelectorAll('.lc-yt').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0';f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;f.title=a.getAttribute('aria-label');a.innerHTML='';a.appendChild(f);},{once:true})});
  root.querySelectorAll('.lc-yr').forEach(function(e){e.textContent=new Date().getFullYear()});
  if('IntersectionObserver' in window){root.classList.add('lc-js');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
