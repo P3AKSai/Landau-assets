@@ -5,9 +5,28 @@ services:
     buildCommand: bash fetch-images.sh
     staticPublishPath: ./public
     headers:
-      - path: /*
+      - path: /img/*
         name: Cache-Control
         value: public, max-age=604800
-      - path: /*
+      - path: /img/*
         name: Access-Control-Allow-Origin
         value: "*"
+    routes:
+      - type: rewrite
+        source: /company
+        destination: /company.html
+      - type: rewrite
+        source: /services
+        destination: /services.html
+      - type: rewrite
+        source: /clients
+        destination: /clients.html
+      - type: rewrite
+        source: /testimonials
+        destination: /testimonials.html
+      - type: rewrite
+        source: /resources
+        destination: /resources.html
+      - type: rewrite
+        source: /contact
+        destination: /contact.html

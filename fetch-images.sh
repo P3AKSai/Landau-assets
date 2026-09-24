@@ -22,4 +22,4 @@ echo "Images downloaded: $ok, already present: $skip"
   echo '<h1>Landau &amp; Company image assets</h1><div>'
   while read -r name url; do [ -n "${name:-}" ] && echo "<figure><img src=\"img/$name\" loading=\"lazy\"><figcaption>/img/$name</figcaption></figure>"; done < image-list.txt
   echo '</div>'
-} > public/index.html
+} > public/assets.html
