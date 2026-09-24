@@ -215,11 +215,18 @@ font-family:var(--sans);color:var(--text);background:var(--cream);font-size:17px
 .lc .lc-logo-tile{padding:20px 26px}
 .lc .lc-logo-tile b{font-family:var(--serif);font-size:1.3rem;color:var(--ink);font-weight:600;line-height:1.2}
 .lc .lc-logo-tile span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.lc .lc-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.lc .lc-video{aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:var(--ink-2);position:relative}
-.lc .lc-video iframe,.lc .lc-video video{position:absolute;inset:0;width:100%;height:100%;border:0}
-.lc .lc-video:empty{display:grid;place-items:center;border:2px dashed rgba(255,255,255,.18)}
-.lc .lc-video:empty::before{content:"Paste a video embed here";color:rgba(255,255,255,.45);font-size:.9rem}
+.lc .lc-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.lc .lc-vcard{margin:0}
+.lc .lc-yt{position:relative;display:block;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000;cursor:pointer;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.lc .lc-yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s,opacity .3s;opacity:.85}
+.lc .lc-yt:hover img{transform:scale(1.04);opacity:1}
+.lc .lc-yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lc .lc-play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:var(--terra);display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(0,0,0,.6);transition:transform .25s,background .25s}
+.lc .lc-play::before{content:"";margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #fff}
+.lc .lc-yt:hover .lc-play{transform:scale(1.1);background:var(--terra-2)}
+.lc .lc-vcard figcaption{margin-top:14px}
+.lc .lc-vcard figcaption b{display:block;color:#fff;font-size:1rem}
+.lc .lc-vcard figcaption span{display:block;color:rgba(255,255,255,.6);font-size:.88rem}
 
 /* services detail */
 .lc .lc-sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
@@ -338,6 +345,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  .lc .lc-drawer .lc-btn{margin-top:16px;justify-content:center;border:0;padding:16px}
  .lc .lc-steps{grid-template-columns:repeat(3,1fr)}
  .lc .lc-foot-g{grid-template-columns:1fr 1fr}
+ .lc .lc-videos{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
  .lc{font-size:16px}
@@ -419,10 +427,9 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
 </div></section>
 
 <section class="lc-sec lc-dark"><div class="lc-wrap">
- <div class="lc-head lc-rv"><span class="lc-eyebrow">On air</span><h2>Client commercials</h2><p class="lc-lead">A selection of broadcast work produced for our clients.</p></div>
+ <div class="lc-head lc-rv"><span class="lc-eyebrow">On air</span><h2>Client commercials</h2><p class="lc-lead">A selection of broadcast work produced for our clients. Click any spot to play it.</p></div>
  <div class="lc-videos">
-  <div class="lc-video lc-rv"><!-- Paste YouTube/Vimeo iframe here (no spaces) --></div>
-  <div class="lc-video lc-rv"><!-- Paste YouTube/Vimeo iframe here (no spaces) --></div>
+  <figure class="lc-vcard lc-rv"><a class="lc-yt" href="https://www.youtube.com/watch?v=GeepX7Re30I" data-yt="GeepX7Re30I" target="_blank" rel="noopener" aria-label="Play Flame Connection commercial"><img src="https://i.ytimg.com/vi/GeepX7Re30I/hqdefault.jpg" alt="Flame Connection commercial" loading="lazy"><span class="lc-play"></span></a><figcaption><b>Flame Connection</b><span>Spring &amp; Summer TV spot</span></figcaption></figure><figure class="lc-vcard lc-rv"><a class="lc-yt" href="https://www.youtube.com/watch?v=Z2xiDRia2Sg" data-yt="Z2xiDRia2Sg" target="_blank" rel="noopener" aria-label="Play Flame Connection commercial"><img src="https://i.ytimg.com/vi/Z2xiDRia2Sg/hqdefault.jpg" alt="Flame Connection commercial" loading="lazy"><span class="lc-play"></span></a><figcaption><b>Flame Connection</b><span>Fall &amp; Winter TV spot</span></figcaption></figure><figure class="lc-vcard lc-rv"><a class="lc-yt" href="https://www.youtube.com/watch?v=iE5yusVFcWI" data-yt="iE5yusVFcWI" target="_blank" rel="noopener" aria-label="Play Flame Connection commercial"><img src="https://i.ytimg.com/vi/iE5yusVFcWI/hqdefault.jpg" alt="Flame Connection commercial" loading="lazy"><span class="lc-play"></span></a><figcaption><b>Flame Connection</b><span>Outdoor Cooking</span></figcaption></figure><figure class="lc-vcard lc-rv"><a class="lc-yt" href="https://www.youtube.com/watch?v=LQUdMOXm_zc" data-yt="LQUdMOXm_zc" target="_blank" rel="noopener" aria-label="Play Sunstreet Mortgage commercial"><img src="https://i.ytimg.com/vi/LQUdMOXm_zc/hqdefault.jpg" alt="Sunstreet Mortgage commercial" loading="lazy"><span class="lc-play"></span></a><figcaption><b>Sunstreet Mortgage</b><span>Broadcast spot</span></figcaption></figure><figure class="lc-vcard lc-rv"><a class="lc-yt" href="https://www.youtube.com/watch?v=apy9kuN2ZSk" data-yt="apy9kuN2ZSk" target="_blank" rel="noopener" aria-label="Play Sonoran Gardens commercial"><img src="https://i.ytimg.com/vi/apy9kuN2ZSk/hqdefault.jpg" alt="Sonoran Gardens commercial" loading="lazy"><span class="lc-play"></span></a><figcaption><b>Sonoran Gardens</b><span>Landscape Design &amp; Construction</span></figcaption></figure><figure class="lc-vcard lc-rv"><a class="lc-yt" href="https://www.youtube.com/watch?v=j8lFZH-0PbI" data-yt="j8lFZH-0PbI" target="_blank" rel="noopener" aria-label="Play Tucson Plumbing commercial"><img src="https://i.ytimg.com/vi/j8lFZH-0PbI/hqdefault.jpg" alt="Tucson Plumbing commercial" loading="lazy"><span class="lc-play"></span></a><figcaption><b>Tucson Plumbing</b><span>&ldquo;Truth in Advertising&rdquo;</span></figcaption></figure>
  </div>
 </div></section>
 <section class="lc-sec-sm"><div class="lc-wrap"><div class="lc-value lc-rv">
@@ -449,6 +456,7 @@ a.lc-ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-colo
  var root=document.currentScript&&document.currentScript.parentNode;if(!root||!root.classList.contains('lc'))root=document.querySelector('.lc');if(!root)return;
  var nav=root.querySelector('#lcNav'),b=root.querySelector('#lcBurger');
  if(b)b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+ root.querySelectorAll('.lc-yt').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0';f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;f.title=a.getAttribute('aria-label');a.innerHTML='';a.appendChild(f);},{once:true})});
  root.querySelectorAll('.lc-yr').forEach(function(e){e.textContent=new Date().getFullYear()});
  if('IntersectionObserver' in window){root.classList.add('lc-js');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
